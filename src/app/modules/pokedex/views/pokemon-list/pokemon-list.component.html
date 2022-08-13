@@ -1,0 +1,14 @@
+<div class="flex flex-row gap-2 w-full items-center justify-center">
+  <button mat-icon-button [disabled]="offset < 1" (click)="previousPage()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+  <app-pokemon-search></app-pokemon-search>
+  <button mat-icon-button [disabled]="offset > 1140" (click)="nextPage()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+</div>
+<div class="grid grid-cols-2 gap-2 md:gap-4 lg:grid-cols-3 p-2 mt-4" *ngIf="pokemons">
+  <ng-container *ngFor="let pokemon of pokemons">
+    <app-pokemon-card class="cursor-pointer hover:hue-rotate-180" (click)="onSelectPokemon(pokemon.url)" [url]="pokemon.url"></app-pokemon-card>
+  </ng-container>
+</div>

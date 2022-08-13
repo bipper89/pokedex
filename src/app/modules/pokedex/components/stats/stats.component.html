@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-4 p-2" *ngFor="let stat of stats">
+  <div class="flex flex-row justify-between">
+    <div>{{stat['stat']['name']}}:</div>
+    <div>{{stat['base_stat']}}</div>
+  </div>
+  <mat-progress-bar mode="determinate" [value]="stat['base_stat']"></mat-progress-bar>
+  <mat-divider></mat-divider>
+</div>
+

@@ -1,0 +1,42 @@
+<div *ngIf="!isLoading" class="w-screen h-full sm:w-[500px] sm:w-full md:h-full mx-auto md:grid md:grid-cols-2" [ngClass]="changeBG()">
+  <a mat-icon-button (click)="onNavigate()">
+    <mat-icon class="text-white">arrow_back_ios</mat-icon>
+  </a>
+  <img class="w-2/3 h-2/3 sm:w-2/3 mx-auto translate-y-1/4 md:translate-y-0 my-auto" [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default" [alt]="pokemon?.name">
+  <div class="bg-white rounded-xl sm:rounded-l-none m-2 md:m-0">
+    <h1 class="pt-20 text-center capitalize">{{pokemon?.name}}</h1>
+    <div class="grid grid-cols-3 my-5">
+      <div class="grid grid-rows-2">
+        <div class="text-center capitalize">{{pokemon?.types[0]?.type?.name}}</div>
+        <div class="text-center">Type</div>
+      </div>
+      <div class="grid grid-rows-2">
+        <div class="text-center">{{pokemon?.weight}}</div>
+        <div class="text-center">Weight</div>
+      </div>
+      <div class="grid grid-rows-2">
+        <div class="text-center">{{pokemon?.height}}</div>
+        <div class="text-center">Height</div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="mt-10"></div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Abilities">
+        <div class="mx-5">
+          <app-abilities [abilities]="pokemon?.abilities"></app-abilities>
+        </div>
+      </mat-tab>
+      <mat-tab label="Stats">
+        <div class="mx-5">
+          <app-stats [stats]="pokemon?.stats"></app-stats>
+        </div>
+      </mat-tab>
+      <mat-tab label="Types">
+        <div class="mx-5">
+          <app-types [types]="pokemon?.types"></app-types>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="bg-white rounded-xl shadow-2xl" [ngClass]="changeBG()">
+  <div class="md:hidden">
+    <div class="text-md text-white uppercase font-bold text-center pt-2">{{pokemon?.name}}</div>
+    <img class="mx-auto" [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default" alt="pokemon.name">
+  </div>
+  <div class="hidden md:block">
+    <div class="grid grid-cols-2">
+      <img [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default" alt="pokemon.name">
+      <div>
+        <div class="text-white text-center text-2xl uppercase p-4 font-bol">{{pokemon?.name}}</div>
+        <ng-container>
+          <div class="mt-3.5" *ngFor="let type of pokemon?.types">
+            <span class="text-white font-semibold text-base uppercase backdrop-brightness-125 bg-white/30 rounded-xl p-2">{{type?.type?.name}}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

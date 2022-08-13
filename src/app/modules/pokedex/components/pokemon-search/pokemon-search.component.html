@@ -1,0 +1,15 @@
+<ng-container [formGroup]="form">
+  <mat-form-field class="w-full p-2 flex flex-row p-1" appearance="outline">
+    <mat-label>Search</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Find pokemon by name or id"
+      formControlName="param"
+    >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <div class="mx-auto w-11/12">
+    <button class="w-full" [disabled]="form.invalid" mat-raised-button (click)="onSearch()">Find</button>
+  </div>
+</ng-container>
