@@ -36,7 +36,7 @@ export class PokemonListComponent implements OnInit {
     const newURL = new URL(url);
     const param = newURL.pathname.trim().split('/')
     this.store.dispatch(pokemonActions.searchPokemon({param: param[4]}))
-    this.router.navigate(['/detail']);
+    this.router.navigate(['/pokedex/detail']);
   }
 
   nextPage() {
