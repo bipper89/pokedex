@@ -21,6 +21,8 @@ export class AboutComponent implements OnInit {
     {ability: 'Angular', value: 90},
     {ability: 'React', value: 60},
     {ability: 'Redux', value: 60},
+    {ability: 'Spring Boot', value: 60},
+    {ability: 'Quarkus', value: 60},
   ]
 
   constructor() { }

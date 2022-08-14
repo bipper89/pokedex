@@ -14,6 +14,7 @@ import {PokemonEffects} from "./reducers/pokemon/pokemon.effects";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared/shared.module";
 import {MaterialModule} from "./modules/material/material.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,13 @@ import {MaterialModule} from "./modules/material/material.module";
     PokedexModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([PokemonsEffects, PokemonEffects])
+    EffectsModule.forRoot([PokemonsEffects, PokemonEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
