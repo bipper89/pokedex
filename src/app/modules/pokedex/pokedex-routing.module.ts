@@ -4,9 +4,9 @@ import {PokemonListComponent} from "./views/pokemon-list/pokemon-list.component"
 import {PokemonDetailComponent} from "./views/pokemon-detail/pokemon-detail.component";
 
 const routes: Routes = [
-  {path: 'list', component: PokemonListComponent},
+  {path: '', component: PokemonListComponent},
   {path: 'detail', component: PokemonDetailComponent},
-  {path: '**', pathMatch: 'full', redirectTo: '/list'}
+  {path: '**', pathMatch: 'full', redirectTo: '/'}
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

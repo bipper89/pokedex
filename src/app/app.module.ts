@@ -12,6 +12,8 @@ import {PokedexModule} from "./modules/pokedex/pokedex.module";
 import {PokemonsEffects} from "./reducers/pokemons/pokemons.effects";
 import {PokemonEffects} from "./reducers/pokemon/pokemon.effects";
 import {AppRoutingModule} from "./app-routing.module";
+import {SharedModule} from "./shared/shared.module";
+import {MaterialModule} from "./modules/material/material.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {AppRoutingModule} from "./app-routing.module";
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    SharedModule,
+    MaterialModule,
     PokedexModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
