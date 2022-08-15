@@ -33,7 +33,7 @@ export class PokemonSearchComponent implements OnInit {
   onSearch() {
     this.store.dispatch(pokemonActions.searchPokemon({param: this.searchParam?.value}));
     this.form.reset();
-    this.router.navigate(['/detail'])
+    this.router.navigate(['/pokedex/detail'])
   }
 
 }
